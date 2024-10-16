@@ -6,25 +6,23 @@ var circleLayer = null;
 
 function generate_heatmap(points, maxBotristaIndex, totalPoints) {
   // Ajustar el radio y blur dinámicamente
-  var dynamicRadius = totalPoints < 10000 ? 50 : 20;
+  var dynamicRadius = totalPoints < 10000 ? 30 : 20;   // 50 : 20 // cambiar a radio adaptativo por zoom
   var dynamicBlur = totalPoints < 10000 ? 15 : 25;
   var dynamicMax = totalPoints < 10000 ? 0.01 : 0.05;
 
-  if (!heatLayer) {
-    // Crear el heatmap si no existe
-    heatLayer = L.heatLayer(points, {
-      radius: dynamicRadius,
-      blur: dynamicBlur,
-      max: dynamicMax,
-    }).addTo(map);
-  } else {
-    // Actualizar el heatmap si ya existe
-    heatLayer.setLatLngs(points);
-    heatLayer.options.max = dynamicMax;
-    heatLayer.options.radius = dynamicRadius;
-    heatLayer.options.blur = dynamicBlur;
-    heatLayer.redraw();
+  // Eliminar el heatmap si ya existe
+  if (heatLayer) {
+    map.removeLayer(heatLayer);
   }
+
+  // Crear un nuevo heatmap con las nuevas opciones
+  heatLayer = L.heatLayer(points, {
+    radius: dynamicRadius,
+    blur: dynamicBlur,
+    max: dynamicMax,
+  }).addTo(map);
+
+  console.log("Heatmap actualizado");
 }
 
 function generate_circleLayer(data) {
