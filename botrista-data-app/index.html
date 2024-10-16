@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Botrista Commercial Footprint</title>
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Importar Leaflet CSS y JavaScript -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+
+    <!-- Importar jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Importar Select2 para autocompletar -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  </head>
+  <body>
+    <!-- Header con título a la izquierda y filtros a la derecha -->
+    <header>
+      <div class="header-content">
+        <h2>Botrista US Commercial Footprint</h2>
+        <div class="filters">
+          <div class="filter-group">
+            <select
+              id="stateFilter"
+              name="stateFilter"
+              onchange="zoomToState()"
+            >
+              <option value="">Select State</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <select id="cityFilter" name="cityFilter" onchange="zoomToCity()">
+              <option value="">Select City</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <select
+              id="companyFilter"
+              name="companyFilter"
+              onchange="filterByCompany()"
+            >
+              <option value="">Select Company</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenedor del mapa -->
+    <div id="map"></div>
+
+    <!-- Contenedor del recuadro para la tabla -->
+    <div id="info-box">
+      <h3 id="table-title">Top Rankings</h3>
+      <table id="info-table">
+        <thead>
+          <!-- Aquí se añadirá el contenido dinámicamente según la tabla seleccionada -->
+        </thead>
+        <tbody>
+          <!-- Aquí se añadirá el contenido dinámicamente -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Archivos JS -->
+    <script src="js/utils.js"></script>
+    <script src="js/table.js"></script>
+    <script src="js/heatmap.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/map.js"></script>
+  </body>
+</html>

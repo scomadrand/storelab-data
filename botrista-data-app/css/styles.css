@@ -1,0 +1,145 @@
+/* Fuente principal */
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #000f1e;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+/* Estilos para el header */
+header {
+  background-color: #000f1e;
+  color: #ffff00;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* Contenedor que divide el espacio 50/50 entre el título y los filtros */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+/* Contenedor de los filtros */
+.filters {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  justify-content: flex-end;
+  margin-right: 40px; /* Añadir espacio a la derecha */
+}
+
+/* Estilo para cada filtro */
+.filter-group select {
+  padding: 10px;
+  font-size: 16px;
+  min-width: 250px; /* Aumentar el ancho mínimo */
+  max-width: 300px; /* Ancho máximo */
+}
+
+/* El mapa ocupa todo el ancho y altura */
+#map {
+  width: 100%;
+  height: calc(100vh - 70px); /* La altura menos el espacio del header */
+}
+
+/* Estilo para el contenedor de la tabla */
+#info-box {
+  position: absolute;
+  top: 80px; /* Debajo del header */
+  right: 10px;
+  width: 500px; /* Aumentar el ancho para que quepa la tabla */
+  max-height: calc(
+    100vh - 110px
+  ); /* Limitar la altura para que no exceda la pantalla */
+  background-color: #000f1e;
+  color: white;
+  padding: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+  z-index: 1000; /* Asegurarse que esté por encima del mapa */
+  overflow-y: auto; /* Permitir el scroll vertical si excede la altura */
+}
+
+/* Estilo de la tabla */
+#info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#info-table th,
+#info-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#info-table th {
+  background-color: #1a2b3c; /* Fondo más claro para los encabezados */
+  font-weight: bold;
+  color: #ffff00; /* Texto amarillo */
+}
+
+#info-table tr:nth-child(even) {
+  background-color: #1e3a5f; /* Fondo para las filas pares */
+}
+
+#info-table tr:nth-child(odd) {
+  background-color: #000f1e; /* Fondo para las filas impares */
+}
+
+/* Cambiar el color de fondo de una fila al pasar el ratón */
+#info-table tr:hover {
+  background-color: #2a4d6e; /* Fondo ligeramente más claro cuando se pasa el ratón */
+}
+
+/* Estilo del contenedor de la leyenda */
+.info.legend-gradient {
+  background-color: white;
+  padding: 15px; /* Aumentar el padding para hacerla más espaciosa */
+  font: 16px Arial, sans-serif; /* Aumentar el tamaño del texto */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  width: 200px; /* Aumentar el ancho de la leyenda */
+}
+
+/* Estilo para el título de la leyenda */
+.info.legend-gradient h4 {
+  margin-bottom: 10px; /* Aumentar el margen inferior */
+  font-weight: bold;
+  color: #333;
+  font-size: 18px; /* Aumentar el tamaño del título */
+}
+
+/* Contenedor de la barra de gradiente */
+.legend-scale {
+  display: flex;
+  align-items: center;
+}
+
+/* Barra de gradiente visual */
+.legend-bar {
+  width: 180px; /* Aumentar el ancho de la barra */
+  height: 25px; /* Aumentar la altura de la barra */
+  background: linear-gradient(to right, blue, green, yellow, orange, red);
+  margin: 0 10px;
+  border: 1px solid #ddd;
+}
+
+/* Estilo para las etiquetas de los extremos (0 y 1) */
+.legend-scale span {
+  font-size: 14px; /* Aumentar el tamaño de las etiquetas */
+  color: #333;
+}
