@@ -70,7 +70,7 @@ function generate_circleLayer(data) {
 
 function loadData(selectedCompany = "") {
   fetch(
-    "https://raw.githubusercontent.com/scomadrand/storelab-data/refs/heads/main/data.json"
+    "https://raw.githubusercontent.com/scomadrand/storelab-data/refs/heads/main/botrista-data-app/data/data.json"
   )
     .then((response) => response.json())
     .then((data) => {
