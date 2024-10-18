@@ -1,0 +1,31 @@
+# Node.js
+node_modules/
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# JetBrains (IntelliJ, PyCharm)
+.idea/
+
+# Logs
+*.log
+
+# SSH keys, credentials, secrets
+*.pem
+*.key
+
+# Configuration files with sensitive data
+config.yaml
+
+# Docker files
+**/docker-compose.override.yml
+**/docker-compose.local.yml
+
